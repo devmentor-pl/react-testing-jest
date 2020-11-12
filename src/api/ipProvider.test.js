@@ -20,7 +20,7 @@ describe('get()', () => {
         );
     });
 });
-// ...
+
 describe('mock', () => {
     it('jest.fn()', () => {
         const mockFn = jest.fn();
@@ -35,7 +35,6 @@ describe('mock', () => {
         expect(mockFn.mock.results[0].value).toBe(undefined);
     });
 
-    // ...
     it('jest.fn(), return', () => {
         const mockFn = jest.fn();
         mockFn.mockReturnValue(false);
@@ -47,7 +46,6 @@ describe('mock', () => {
         expect(newArr).toEqual([true, true, false]);
     });
 
-    // ...
     it('jest.fn(), promise resolved', async () => {
         const mockPromise = jest.fn();
         mockPromise.mockResolvedValue(true);
@@ -56,7 +54,6 @@ describe('mock', () => {
         expect(data).toBe(true);
     });
 
-    // ...
     it('jest.fn(), promise rejected', async () => {
         const mockPromise = jest.fn();
         mockPromise.mockRejectedValue(new Error('Err'));
