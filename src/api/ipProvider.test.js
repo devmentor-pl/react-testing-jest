@@ -25,10 +25,10 @@ describe('mock', () => {
     it('jest.fn()', () => {
         const mockFn = jest.fn();
 
-        [1, 2].forEach(mockFn);
-        expect(mockFn).toHaveBeenCalledTimes(2);
+        ['a', 'b', 'c'].forEach(mockFn);
+        expect(mockFn).toHaveBeenCalledTimes(3);
         // pierwszy parametr przy pierwszym wywołaniu
-        expect(mockFn.mock.calls[0][0]).toBe(1);
+        expect(mockFn.mock.calls[0][0]).toBe('a');
         // drugi parametr przy pierwszym wywołaniu
         expect(mockFn.mock.calls[0][1]).toBe(0);
         // pierwsza zwrócona wartość
@@ -41,7 +41,7 @@ describe('mock', () => {
         mockFn.mockReturnValueOnce(true);
         mockFn.mockReturnValueOnce(true);
 
-        const newArr = [1, 2, 3].map(mockFn);
+        const newArr = ['a', 'b', 'c'].map(mockFn);
         expect(mockFn).toHaveBeenCalledTimes(3);
         expect(newArr).toEqual([true, true, false]);
     });
